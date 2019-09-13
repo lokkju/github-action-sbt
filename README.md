@@ -17,7 +17,7 @@ __not needed unless your build.sbt is not in the root of your repository__
 
 ### `settings_sbt`
 
-The contents of a file that will be writen to {sbt_project_directory}/project/github_action_sbt_settings.sbt
+The contents of a file that will be writen to {sbt_project_directory}/github_action_sbt_settings.sbt
 
 This is useful for setting repositories, credentials, etc
 
@@ -35,12 +35,17 @@ Currently supported tags are:
 __Feel free to request additional tags.__
 
 ## Example usage
+
+This example demonstrates advanced usage, including configuring a project to deploy to the GitHub Packages repository using SBT
 ```
-uses: lokkju/github-action-sbt@master
-with:
-  commands: test package
-  sbt_project_directory: ./test
-  settings_sbt: |
-    externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju"
-    credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${{ secrets.GITHUB_TOKEN }}")
+- name: SBT action test
+  id: sbt
+  uses: ./
+  with:
+    commands: aetherDeploy
+    sbt_project_directory: ./test
+    settings_sbt: |
+      externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt"
+      publishTo := Some("GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt")
+      credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${{ secrets.GITHUB_TOKEN }}")
 ```

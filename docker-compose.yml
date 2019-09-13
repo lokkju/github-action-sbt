@@ -3,12 +3,12 @@ services:
   github-action-sbt:
     build: .
     working_dir: /github/workspace
-    command: test package
+    command: aetherDeploy
     environment:
       INPUT_SBT_PROJECT_DIRECTORY: './test'
       INPUT_SETTINGS_SBT: |
-        externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju"
-      INPUT_SECRETS_SBT: |
+        externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt"
+        publishTo := Some("GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt")
         credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${GITHUB_TOKEN}")
     volumes:
     - ./:/github/workspace

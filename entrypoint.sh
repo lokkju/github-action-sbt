@@ -13,8 +13,8 @@ if [ ! -d ./project/ ] ; then
   mkdir project
 fi
 
-echo "+ writing ./project/github_action_sbt_settings.sbt"
-echo "${INPUT_SETTINGS_SBT}" > ./project/github_action_sbt_settings.sbt
+echo "+ writing ./github_action_sbt_settings.sbt"
+echo "${INPUT_SETTINGS_SBT}" > ./github_action_sbt_settings.sbt
 
 set -x
 /usr/bin/sbt "${@}"
