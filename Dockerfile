@@ -27,4 +27,4 @@ RUN \
   rm -r project && rm build.sbt && rm Temp.scala && rm -r target
 
   ADD entrypoint.sh /entrypoint.sh
-  ENTRYPOINT [“/entrypoint.sh”]
+  ENTRYPOINT ["/entrypoint.sh"]
