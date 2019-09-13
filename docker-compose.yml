@@ -1,0 +1,7 @@
+version: '3'
+services:
+  github-action-sbt:
+    build: .
+    environment:
+      INPUT_SBT_PROJECT_DIRECTORY: './'
+    command: '"show name" "show name"'
