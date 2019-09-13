@@ -2,6 +2,13 @@ version: '3'
 services:
   github-action-sbt:
     build: .
+    working_dir: /github/workspace
+    command: test package
     environment:
-      INPUT_SBT_PROJECT_DIRECTORY: './'
-    command: '"show name" "show name"'
+      INPUT_SBT_PROJECT_DIRECTORY: './test'
+      INPUT_SETTINGS_SBT: |
+        externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju"
+      INPUT_SECRETS_SBT: |
+        credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${GITHUB_TOKEN}")
+    volumes:
+    - ./:/github/workspace

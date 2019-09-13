@@ -10,7 +10,8 @@ jobs:
       id: sbt
       uses: ./
       with:
-        commands: '"test" "package"'
+        commands: test package
         sbt_project_directory: ./test
-      env:
-        external_resolver_eltoro_nexus: '"El Toro Nexus Resolver" at "http://nexus.middleearth.eltoro.com/repository/maven-public/"'
+        settings_sbt: |
+          externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju"
+          credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${{ secrets.GITHUB_TOKEN }}")
