@@ -10,7 +10,7 @@ jobs:
       id: sbt
       uses: ./
       with:
-        commands: "test" "package"
+        commands: '"test" "package"'
         sbt_project_directory: ./test
       env:
         external_resolver_eltoro_nexus: "El Toro Nexus Resolver" at "http://nexus.middleearth.eltoro.com/repository/maven-public/"
