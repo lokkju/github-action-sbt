@@ -1,0 +1,21 @@
+# action.yml
+name: 'SBT'
+author: 'Loki Coyote <lokkju@gmail.com>'
+description: 'SBT build tool action'
+inputs:
+  commands:  # id of input
+    description: 'SBT commands'
+    required: true
+    default: 'test'
+  sbt_project_directory:
+    description: 'relative path to the directory containing your build.sbt, if it is not in the root of your repository'
+    default: './'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commands }}
+
+branding:
+  icon: 'package'
+  color: 'blue'

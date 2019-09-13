@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  action_test:
+    runs-on: ubuntu-latest
+    name: action test
+    steps:
+    - name: SBT action test
+      id: sbt
+      uses: ./
+      with:
+        commands: '"test"'
+        sbt_project_directory: ./test
+
