@@ -1,2 +1,2 @@
-test/github-action-sbt-settings.sbt
+test/github_action_sbt_settings.sbt
 target/
