@@ -10,5 +10,5 @@ jobs:
       id: sbt
       uses: ./
       with:
-        commands: '"test"'
+        commands: "test" "package"
         sbt_project_directory: ./test
