@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: action test
     steps:
+    - uses: actions/checkout@v1
     - name: SBT action test
       id: sbt
       uses: ./
       with:
         commands: '"test"'
         sbt_project_directory: ./test
-
