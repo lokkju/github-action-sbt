@@ -42,10 +42,8 @@ This example demonstrates advanced usage, including configuring a project to dep
   id: sbt
   uses: ./
   with:
-    commands: aetherDeploy
+    commands: test
     sbt_project_directory: ./test
-    settings_sbt: |
-      externalResolvers += "GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt"
-      publishTo := Some("GitHub lokkju Apache Maven Packages" at "https://maven.pkg.github.com/lokkju/github-action-sbt")
-      credentials += Credentials("GitHub lokkju Apache Maven Packages", "maven.pkg.github.com", "lokkju", "${{ secrets.GITHUB_TOKEN }}")
 ```
+
+
