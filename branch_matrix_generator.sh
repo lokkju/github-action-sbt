@@ -14,9 +14,9 @@ do
     for SCALA_VERSION in ${SCALA_VERSIONS[@]}
     do
       git checkout -B ${JAVA_VERSION}-${SBT_VERSION}-${SCALA_VERSION}
-      #sed 's/\${JAVA_VERSION:.*}/\${JAVA_VERSION:-$JAVA_VERSION}/g' Dockerfile
-      #sed 's/\${SBT_VERSION:.*}/\${SBT_VERSION:-$SBT_VERSION}/g' Dockerfile
-      #sed 's/\${SCALA_VERSION:.*}/\${SCALA_VERSION:-$SCALA_VERSION}/g' Dockerfile
+      sed -i "s/\${JAVA_VERSION:.*}/\${JAVA_VERSION:-$JAVA_VERSION}/g" Dockerfile
+      sed -i "s/\${SBT_VERSION:.*}/\${SBT_VERSION:-$SBT_VERSION}/g" Dockerfile
+      sed -i "s/\${SCALA_VERSION:.*}/\${SCALA_VERSION:-$SCALA_VERSION}/g" Dockerfile
       git commit -a -m "Updating branch to for new version"
       git checkout master
     done
