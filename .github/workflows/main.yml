@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   action_test:
@@ -12,4 +15,3 @@ jobs:
       with:
         commands: test
         sbt_project_directory: ./test
-
