@@ -1,5 +1,5 @@
 # action.yml
-name: 'SBT'
+name: 'SBT Action'
 author: 'Loki Coyote <lokkju@gmail.com>'
 description: 'SBT build tool action'
 inputs:

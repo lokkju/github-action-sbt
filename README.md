@@ -30,6 +30,9 @@ This is useful for setting repositories, credentials, etc
 The tag controls the version of Java, SBT, and Scala that the image is initialized with.  SBT and Scala will auto-download other versions as specified in your project settings, but if they don't match the initialized versions, it can take significant extra build time.
 
 The tag format is `{JAVA_VERSION}-{SBT_VERSION}-{SCALA_VERSION}`
+
+master branch is currently the same as `8-1.3.0-2.13.0`
+
 Currently supported tags are:
 ```
 JAVA_VERSIONS=("8" "11" "14")
@@ -45,7 +48,7 @@ This example demonstrates advanced usage, including configuring a project to dep
 ```
 - name: SBT action test
   id: sbt
-  uses: ./
+  uses: lokkju/github-action-sbt@master
   with:
     commands: test
     sbt_project_directory: ./test
