@@ -17,6 +17,6 @@ echo "+ writing ./github_action_sbt_settings.sbt"
 echo "${INPUT_SETTINGS_SBT}" > ./github_action_sbt_settings.sbt
 
 set -x
-/usr/bin/sbt "${@}"
+/usr/bin/sbt ${@}
 
 #echo ::set-output name=time::$time
