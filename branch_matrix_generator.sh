@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 JAVA_VERSIONS=("8" "11" "14")
-SBT_VERSIONS=("0.13.17" "1.1.6" "1.2.8" "1.3.0")
-SCALA_VERSIONS=("2.13.0" "2.12.10" "2.11.12" "2.10.7")
+SBT_VERSIONS=("0.13.17" "1.1.6" "1.2.8" "1.3.10")
+SCALA_VERSIONS=("2.13.2" "2.12.11" "2.11.12" "2.10.7")
 
 # echo deleting exiting branches
 # git branch -r |  grep "^  origin/" | sed "s|^  origin/|:|" | grep -v "^:HEAD" | grep -v "^:master$" | xargs git push origin
