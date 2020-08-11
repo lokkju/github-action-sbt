@@ -3,5 +3,5 @@ object CubeCalculator extends App {
     x * x * x
   }
 
-  // println(s"CubeCalculator 3 is ${CubeCalculator.cube(3)} ")
+  println(s"CubeCalculator 3 is ${CubeCalculator.cube(3)} ")
 }
