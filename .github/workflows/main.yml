@@ -6,10 +6,10 @@ on:
 jobs:
   compile:
     runs-on: ubuntu-latest
-    name: action compile
+    name: compile-action
     steps:
     - uses: actions/checkout@v1
-    - name: SBT action test
+    - name: SBT action COMPILE 
       id: sbt
       uses: ./
       with:
@@ -18,10 +18,10 @@ jobs:
   test:
     needs: compile
     runs-on: ubuntu-latest
-    name: action test
+    name: test-action
     steps:
     - uses: actions/checkout@v1
-    - name: SBT action test
+    - name: SBT action TEST
       id: sbt
       uses: ./
       with:
