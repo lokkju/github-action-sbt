@@ -8,3 +8,5 @@ publishMavenStyle := true
 // GitHub package repo isn't supporting javadoc and sources
 publishArtifact in (Compile, packageDoc) := false
 publishArtifact in (Compile, packageSrc) := false
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.0" % Test
