@@ -4,7 +4,19 @@ on:
       - master
 
 jobs:
-  action_test:
+  compile:
+    runs-on: ubuntu-latest
+    name: action compile
+    steps:
+    - uses: actions/checkout@v1
+    - name: SBT action test
+      id: sbt
+      uses: ./
+      with:
+        commands: compile
+        sbt_project_directory: ./test
+  test:
+    needs: compile
     runs-on: ubuntu-latest
     name: action test
     steps:
@@ -13,5 +25,6 @@ jobs:
       id: sbt
       uses: ./
       with:
-        commands: build run test
+        commands: test
         sbt_project_directory: ./test
+
