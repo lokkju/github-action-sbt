@@ -10,6 +10,9 @@ inputs:
   sbt_project_directory:
     description: 'relative path to the directory containing your build.sbt, if it is not in the root of your repository'
     default: './'
+  settings_sbt:
+    description: 'The contents of a file that will be written to {sbt_project_directory}/github_action_sbt_settings.sbt'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
